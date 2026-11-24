@@ -1,0 +1,13 @@
+# `uv run python tools/download_model.py` once, then `docker compose up --build` →
+# http://127.0.0.1:8004 (published on this machine only).
+services:
+  glove:
+    build: .
+    image: glove-detection:0.2
+    ports:
+      - "127.0.0.1:8004:8004"
+    environment:
+      GLOVE_TORCH_THREADS: ${GLOVE_TORCH_THREADS:-4}
+    volumes:
+      - ./models:/app/models:ro
+    restart: unless-stopped

@@ -1,0 +1,114 @@
+[
+ {
+  "id": "jackhammer-gloves",
+  "title": "Jackhammer, outdoors (gloved)",
+  "look_at": "Both \"gloved hand\" boxes are on the ear defenders and the \"bare hand\" box is on the tool pouch; the yellow-gloved hands themselves are missed. Outdoor, eye-level photos are unlike the overhead factory cameras it was trained on.",
+  "image": "samples/jackhammer-gloves.jpg",
+  "result": "samples/jackhammer-gloves.json",
+  "credit": {
+   "title": "Colombia Jackhammer 01.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Colombia_Jackhammer_01.jpg",
+   "author": "Hk6rsf",
+   "licence": "Public domain",
+   "licence_url": ""
+  }
+ },
+ {
+  "id": "red-work-glove",
+  "title": "Red work glove, close-up",
+  "look_at": "The only box is a \"bare hand\" on the worker's head; the large red glove is missed. Close-ups are far from the training data, where hands are small and seen from above.",
+  "image": "samples/red-work-glove.jpg",
+  "result": "samples/red-work-glove.json",
+  "credit": {
+   "title": "Man works with glass in a factory setting wearing gloves and focusing on his task.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Man_works_with_glass_in_a_factory_setting_wearing_gloves_and_focusing_on_his_task.jpg",
+   "author": "Shixart1985",
+   "licence": "CC BY 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by/2.0"
+  }
+ },
+ {
+  "id": "metal-sheet-gloves",
+  "title": "Handling a metal sheet (gloved)",
+  "look_at": "Nothing detected, though a red-gloved hand is in view.",
+  "image": "samples/metal-sheet-gloves.jpg",
+  "result": "samples/metal-sheet-gloves.json",
+  "credit": {
+   "title": "Worker handling a metal sheet in a manufacturing facility.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Worker_handling_a_metal_sheet_in_a_manufacturing_facility.jpg",
+   "author": "Shixart1985",
+   "licence": "CC BY 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by/2.0"
+  }
+ },
+ {
+  "id": "welding-gloves",
+  "title": "Welding (gloved)",
+  "look_at": "Nothing detected: thick welding gloves seen close up never appear in the training data.",
+  "image": "samples/welding-gloves.jpg",
+  "result": "samples/welding-gloves.json",
+  "credit": {
+   "title": "Tig Welding WP9.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Tig_Welding_WP9.jpg",
+   "author": "Prowelder87",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  }
+ },
+ {
+  "id": "lab-nitrile-gloves",
+  "title": "Lab, nitrile gloves",
+  "look_at": "Nothing detected on two clearly gloved hands.",
+  "image": "samples/lab-nitrile-gloves.jpg",
+  "result": "samples/lab-nitrile-gloves.json",
+  "credit": {
+   "title": "Arranging capsules.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Arranging_capsules.jpg",
+   "author": "M Joko Apriyo Putro",
+   "licence": "CC BY 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by/4.0"
+  }
+ },
+ {
+  "id": "machine-operator-bare-hands",
+  "title": "Machine operator (bare hands)",
+  "look_at": "Nothing detected: the bare hands holding a phone are missed. Missed bare hands are this model's main failure, even on its own validation data.",
+  "image": "samples/machine-operator-bare-hands.jpg",
+  "result": "samples/machine-operator-bare-hands.json",
+  "credit": {
+   "title": "A worker operates a machine while checking a mobile device in a workshop setting.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:A_worker_operates_a_machine_while_checking_a_mobile_device_in_a_workshop_setting.jpg",
+   "author": "Shixart1985",
+   "licence": "CC BY 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by/2.0"
+  }
+ },
+ {
+  "id": "salt-worker-distant",
+  "title": "Salt workers, distant (bare hands)",
+  "look_at": "One \"gloved hand\" box, on the basket. The workers' hands are tiny; small hands are found 6-25% of the time even on training-like data.",
+  "image": "samples/salt-worker-distant.jpg",
+  "result": "samples/salt-worker-distant.json",
+  "credit": {
+   "title": "Salt workers of Marakkanam.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:Salt_workers_of_Marakkanam.jpg",
+   "author": "Dey.sandip",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  }
+ },
+ {
+  "id": "tools-no-hands",
+  "title": "Tools, no hands",
+  "look_at": "Correctly empty: no hands, no boxes.",
+  "image": "samples/tools-no-hands.jpg",
+  "result": "samples/tools-no-hands.json",
+  "credit": {
+   "title": "A mechanic at work 2.jpg",
+   "page": "https://commons.wikimedia.org/wiki/File:A_mechanic_at_work_2.jpg",
+   "author": "Edward Middleton",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  }
+ }
+]

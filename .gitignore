@@ -1,5 +1,18 @@
+# Environments and caches
 venv/
+.venv/
 __pycache__/
 *.pyc
-results/
+.pytest_cache/
+.ruff_cache/
+
+# Outputs and model weights (the model is a release asset: tools/download_model.py)
+/results/
+/output/
+/runs/
 models/*.pt
+
+# Local working documents (never committed)
+report.md
+startup.md
+.env

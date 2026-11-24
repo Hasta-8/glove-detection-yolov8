@@ -1,0 +1,32 @@
+{
+ "request_id": "precomputed",
+ "detections": [
+  {
+   "label": "bare_hand",
+   "confidence": 0.365,
+   "bbox": [
+    399,
+    0,
+    536,
+    67
+   ]
+  }
+ ],
+ "counts": {
+  "gloved_hand": 0,
+  "bare_hand": 1
+ },
+ "image": {
+  "format": "JPEG",
+  "width": 1280,
+  "height": 853,
+  "exif_orientation": 1
+ },
+ "timings": {
+  "decode_ms": 11.6,
+  "model_ms": 139.6,
+  "total_ms": 151.2
+ },
+ "model": "yolov8s-glove best_50epc.pt (sha256 cbceb1a10dc6)",
+ "confidence_threshold": 0.25
+}

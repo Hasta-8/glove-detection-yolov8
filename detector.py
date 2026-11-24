@@ -1,97 +1,68 @@
-"""
-detector.py
+"""HandDetector: the fine-tuned YOLOv8s model, returning plain-dict detections.
 
-Encapsulates YOLOv8-based hand detection logic.
-Responsibilities:
-- Load trained YOLO model
-- Run inference on input images
-- Return detections in a clean, model-agnostic format
+The image array goes straight to the model. (The January version wrote each image to
+a temporary JPEG first, meaning to match the `yolo predict` CLI; experiment V3 showed
+the re-compression changed the boxes on 83% of validation images, while passing the
+array gives exactly the CLI's result on all 882.)
 """
 
-from ultralytics import YOLO
-from pathlib import Path
-import cv2
+from __future__ import annotations
+
 import tempfile
-import os
+from pathlib import Path
+
+import numpy as np
+
+DEFAULT_MODEL = Path(__file__).resolve().parent / "models" / "best_50epc.pt"
+DEFAULT_CONFIDENCE = 0.25  # Ultralytics' default; the threshold the evaluation used (V4)
+IMAGE_SIZE = 640  # the training size
+SCRATCH = str(Path(tempfile.gettempdir()) / "glove-detection")
+
+
+def to_detections(cls, conf, xyxy, names: dict, width: int, height: int) -> list[dict]:
+    """Model outputs → [{label, confidence, bbox}], most confident first.
+
+    Boxes are integer pixels [left, top, right, bottom], rounded and clipped to the image.
+    """
+    dets = []
+    for c, s, (x1, y1, x2, y2) in zip(cls, conf, xyxy, strict=True):
+        box = [
+            int(np.clip(round(x1), 0, width)),
+            int(np.clip(round(y1), 0, height)),
+            int(np.clip(round(x2), 0, width)),
+            int(np.clip(round(y2), 0, height)),
+        ]
+        dets.append({"label": names[int(c)], "confidence": round(float(s), 3), "bbox": box})
+    return sorted(dets, key=lambda d: -d["confidence"])
 
 
 class HandDetector:
-    """
-    Wrapper class around YOLOv8 for gloved vs ungloved hand detection.
-    """
+    """Gloved vs bare hand detection with the fine-tuned YOLOv8s."""
 
-    def __init__(self, conf_threshold=0.25, model_path="models/best_50epc.pt"):
-        """
-        Initializes the detector.
-
-        Args:
-            conf_threshold (float): Minimum confidence score for detections.
-            model_path (str): Path to trained YOLO model weights.
-        """
-        self.conf_threshold = conf_threshold
+    def __init__(
+        self, conf_threshold: float = DEFAULT_CONFIDENCE, model_path: str | Path = DEFAULT_MODEL
+    ) -> None:
+        from ultralytics import YOLO
 
         model_path = Path(model_path)
         if not model_path.exists():
-            raise FileNotFoundError(f"Model not found at {model_path}")
-
-        # Load YOLO model
+            raise FileNotFoundError(
+                f"Model not found at {model_path}; run `uv run python tools/download_model.py`."
+            )
+        self.conf_threshold = conf_threshold
         self.model = YOLO(str(model_path))
-
-        # Class ID → label mapping
         self.class_names = self.model.names
 
-    def detect(self, image):
-        """
-        Runs YOLOv8 inference on a single image.
-
-        Important design choice:
-        - Image is written to disk temporarily to force the same preprocessing
-          pipeline as the YOLO CLI (letterboxing, resizing, etc.)
-
-        Args:
-            image (np.ndarray): Input image in BGR format.
-
-        Returns:
-            list: List of detection dictionaries with keys:
-                  - label
-                  - confidence
-                  - bbox [x1, y1, x2, y2]
-        """
-
-        # Save image temporarily to mimic YOLO CLI behavior
-        with tempfile.NamedTemporaryFile(suffix=".jpg", delete=False) as tmp:
-            temp_path = tmp.name
-            cv2.imwrite(temp_path, image)
-
-        # Run YOLO inference
-        results = self.model.predict(
-            source=temp_path,
-            conf=self.conf_threshold,
-            imgsz=640,
-            verbose=False
+    def detect(self, image: np.ndarray, conf_threshold: float | None = None) -> list[dict]:
+        """Detect hands in a BGR image (as `cv2.imread` returns it)."""
+        conf = self.conf_threshold if conf_threshold is None else conf_threshold
+        # Ultralytics creates an (empty) output folder per predictor even without saving;
+        # keep it out of the working directory instead of deleting a `runs/` folder there.
+        r = self.model.predict(
+            image, conf=conf, imgsz=IMAGE_SIZE, verbose=False, save=False, project=SCRATCH
+        )[0]
+        b = r.boxes
+        h, w = image.shape[:2]
+        return to_detections(
+            b.cls.tolist(), b.conf.tolist(), b.xyxy.tolist(), self.class_names, w, h
         )
-
-        detections = []
-
-        # Parse YOLO results
-        for r in results:
-            if r.boxes is None:
-                continue
-
-            for box in r.boxes:
-                cls_id = int(box.cls[0])
-                label = self.class_names[cls_id]
-                conf = float(box.conf[0])
-
-                x1, y1, x2, y2 = map(int, box.xyxy[0])
-
-                detections.append({
-                    "label": label,
-                    "confidence": round(conf, 3),
-                    "bbox": [x1, y1, x2, y2]
-                })
-
-        # Remove temporary file
-        os.remove(temp_path)
-
-        return detections

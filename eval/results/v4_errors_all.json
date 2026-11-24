@@ -1,0 +1,72 @@
+{
+ "experiment": "V4",
+ "subset": "all validation images",
+ "images": 882,
+ "conf": 0.25,
+ "ground_truth": {
+  "gloved_hand/small": {
+   "found": 6,
+   "wrong_class": 0,
+   "missed": 19,
+   "total": 25,
+   "recall": 0.24
+  },
+  "gloved_hand/medium": {
+   "found": 842,
+   "wrong_class": 4,
+   "missed": 60,
+   "total": 906,
+   "recall": 0.929
+  },
+  "gloved_hand/large": {
+   "found": 51,
+   "wrong_class": 0,
+   "missed": 2,
+   "total": 53,
+   "recall": 0.962
+  },
+  "gloved_hand/all": {
+   "found": 899,
+   "wrong_class": 4,
+   "missed": 81,
+   "total": 984,
+   "recall": 0.914
+  },
+  "bare_hand/small": {
+   "found": 12,
+   "wrong_class": 0,
+   "missed": 36,
+   "total": 48,
+   "recall": 0.25
+  },
+  "bare_hand/medium": {
+   "found": 1049,
+   "wrong_class": 2,
+   "missed": 352,
+   "total": 1403,
+   "recall": 0.748
+  },
+  "bare_hand/large": {
+   "found": 92,
+   "wrong_class": 1,
+   "missed": 4,
+   "total": 97,
+   "recall": 0.948
+  },
+  "bare_hand/all": {
+   "found": 1153,
+   "wrong_class": 3,
+   "missed": 392,
+   "total": 1548,
+   "recall": 0.745
+  }
+ },
+ "detections": {
+  "bare_hand/background": 334,
+  "bare_hand/correct": 1153,
+  "bare_hand/wrong_class": 4,
+  "gloved_hand/background": 184,
+  "gloved_hand/correct": 899,
+  "gloved_hand/wrong_class": 3
+ }
+}

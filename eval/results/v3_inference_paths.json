@@ -1,0 +1,64 @@
+{
+ "experiment": "V3",
+ "images": 882,
+ "array_identical_to_file": 882,
+ "tempfile_identical_to_file": 153,
+ "tempfile_box_count_changed": 61,
+ "median_ms": {
+  "file": 367.4,
+  "array": 365.3,
+  "tempfile": 372.7
+ },
+ "examples": [
+  {
+   "image": "NVR-09_Trim_new_Trim-0664_jpg.rf.468aa37a88b25b16b1c0d332065037ea.jpg",
+   "file": 2,
+   "tempfile": 2
+  },
+  {
+   "image": "NVR-09_Trim_new_Trim-0665_jpg.rf.bcdd9ef7baeb32e136ee9907d788f3ee.jpg",
+   "file": 2,
+   "tempfile": 2
+  },
+  {
+   "image": "NVR-09_Trim_new_Trim-0669_jpg.rf.d905ed4b14e7b3666dc2b48a719f9837.jpg",
+   "file": 2,
+   "tempfile": 2
+  },
+  {
+   "image": "NVR-09_Trim_new_Trim-0670_jpg.rf.89bcd6bd02eafc55b474d997a06231c8.jpg",
+   "file": 2,
+   "tempfile": 2
+  },
+  {
+   "image": "NVR-09_Trim_new_Trim-0671_jpg.rf.1bc0f236bd93111ae1c40b7b9504dea2.jpg",
+   "file": 2,
+   "tempfile": 2
+  },
+  {
+   "image": "NVR-09_Trim_new_Trim-0868_jpg.rf.041d9bb6a96cdbf6cb2a7ea2629e6018.jpg",
+   "file": 1,
+   "tempfile": 1
+  },
+  {
+   "image": "NVR-09_Trim_new_Trim-0873_jpg.rf.2c51e6e88abfbb755ea5aee488385404.jpg",
+   "file": 1,
+   "tempfile": 1
+  },
+  {
+   "image": "NVR-09_Trim_new_Trim-0874_jpg.rf.f04aa1cb3cee21bc19debaa396632350.jpg",
+   "file": 1,
+   "tempfile": 1
+  },
+  {
+   "image": "NVR-09_Trim_new_Trim-0879_jpg.rf.194142a5bfd21a829ce5ce0f6a0f05ad.jpg",
+   "file": 1,
+   "tempfile": 1
+  },
+  {
+   "image": "NVR-09_Trim_new_Trim-1533_jpg.rf.cf27cb4cb092385aaa9762fc3b8efccf.jpg",
+   "file": 5,
+   "tempfile": 5
+  }
+ ]
+}

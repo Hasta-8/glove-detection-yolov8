@@ -1,0 +1,37 @@
+{
+ "experiment": "V2",
+ "train_images": 6984,
+ "valid_images": 882,
+ "same_source_in_train": 0,
+ "near_duplicate_bits": 6,
+ "near_duplicates": 460,
+ "near_duplicates_at": {
+  "0": 18,
+  "2": 111,
+  "4": 295,
+  "6": 460,
+  "8": 543,
+  "10": 568
+ },
+ "flagged": 460,
+ "clean": 422,
+ "valid_name_prefixes": {
+  "PP": 303,
+  "frame": 198,
+  "img": 95,
+  "PPE_Data_": 81,
+  "nglovpp": 55,
+  "fglov": 48,
+  "nglov": 41,
+  "goggle": 35,
+  "NVR-": 26
+ },
+ "flagged_by_prefix": {
+  "PP": 260,
+  "img": 71,
+  "nglovpp": 46,
+  "fglov": 38,
+  "goggle": 30,
+  "nglov": 15
+ }
+}

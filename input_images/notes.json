@@ -1,0 +1,34 @@
+{
+ "jackhammer-gloves": {
+  "title": "Jackhammer, outdoors (gloved)",
+  "look_at": "Both \"gloved hand\" boxes are on the ear defenders and the \"bare hand\" box is on the tool pouch; the yellow-gloved hands themselves are missed. Outdoor, eye-level photos are unlike the overhead factory cameras it was trained on."
+ },
+ "red-work-glove": {
+  "title": "Red work glove, close-up",
+  "look_at": "The only box is a \"bare hand\" on the worker's head; the large red glove is missed. Close-ups are far from the training data, where hands are small and seen from above."
+ },
+ "metal-sheet-gloves": {
+  "title": "Handling a metal sheet (gloved)",
+  "look_at": "Nothing detected, though a red-gloved hand is in view."
+ },
+ "welding-gloves": {
+  "title": "Welding (gloved)",
+  "look_at": "Nothing detected: thick welding gloves seen close up never appear in the training data."
+ },
+ "lab-nitrile-gloves": {
+  "title": "Lab, nitrile gloves",
+  "look_at": "Nothing detected on two clearly gloved hands."
+ },
+ "machine-operator-bare-hands": {
+  "title": "Machine operator (bare hands)",
+  "look_at": "Nothing detected: the bare hands holding a phone are missed. Missed bare hands are this model's main failure, even on its own validation data."
+ },
+ "salt-worker-distant": {
+  "title": "Salt workers, distant (bare hands)",
+  "look_at": "One \"gloved hand\" box, on the basket. The workers' hands are tiny; small hands are found 6-25% of the time even on training-like data."
+ },
+ "tools-no-hands": {
+  "title": "Tools, no hands",
+  "look_at": "Correctly empty: no hands, no boxes."
+ }
+}

@@ -1,0 +1,52 @@
+{
+ "request_id": "precomputed",
+ "detections": [
+  {
+   "label": "gloved_hand",
+   "confidence": 0.541,
+   "bbox": [
+    275,
+    125,
+    318,
+    181
+   ]
+  },
+  {
+   "label": "bare_hand",
+   "confidence": 0.353,
+   "bbox": [
+    165,
+    233,
+    196,
+    273
+   ]
+  },
+  {
+   "label": "gloved_hand",
+   "confidence": 0.316,
+   "bbox": [
+    274,
+    124,
+    338,
+    195
+   ]
+  }
+ ],
+ "counts": {
+  "gloved_hand": 2,
+  "bare_hand": 1
+ },
+ "image": {
+  "format": "JPEG",
+  "width": 500,
+  "height": 666,
+  "exif_orientation": 1
+ },
+ "timings": {
+  "decode_ms": 24.2,
+  "model_ms": 207.9,
+  "total_ms": 232.2
+ },
+ "model": "yolov8s-glove best_50epc.pt (sha256 cbceb1a10dc6)",
+ "confidence_threshold": 0.25
+}
