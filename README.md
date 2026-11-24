@@ -97,11 +97,14 @@ results/
 └── logs/     one JSON file per image
 ```
 
+The JSON format (an illustrative example, not a real result):
+
 ```json
 {
-  "filename": "red-work-glove.jpg",
+  "filename": "cam1_frame_0412.jpg",
   "detections": [
-    {"label": "gloved_hand", "confidence": 0.91, "bbox": [x1, y1, x2, y2]}
+    {"label": "gloved_hand", "confidence": 0.91, "bbox": [412, 233, 470, 291]},
+    {"label": "bare_hand", "confidence": 0.62, "bbox": [530, 240, 581, 298]}
   ]
 }
 ```
