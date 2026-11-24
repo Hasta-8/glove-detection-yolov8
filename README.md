@@ -11,7 +11,17 @@ CPU is enough.
 > photos unlike its factory-camera training data it fails outright**, so treat it as a
 > demonstration, not a safety system.
 
-**▶ [Try the online demo](https://hasta-8.github.io/glove-detection-yolov8/)** (precomputed results, runs in the browser)
+**▶ [Try the online demo](https://hasta-8.github.io/glove-detection-yolov8/)** (precomputed results, runs in the browser) · **[62-second walkthrough video](https://github.com/Hasta-8/glove-detection-yolov8/releases/tag/v0.2.0)** (on the release; a YouTube copy is planned)
+
+## Status
+
+| Capability | Status |
+|---|---|
+| Fine-tuned model, published with its SHA-256; CLI (annotated images + JSON logs) | IMPLEMENTED |
+| Evaluation with data leakage stated; error analysis | IMPLEMENTED (`eval/`) |
+| FastAPI service with upload validation, tests in CI, Docker | IMPLEMENTED |
+| Demo page and online static copy | IMPLEMENTED |
+| Walkthrough video on YouTube | PLANNED (recorded; for now attached to the [v0.2.0 release](https://github.com/Hasta-8/glove-detection-yolov8/releases/tag/v0.2.0)) |
 
 ## Results (measured)
 
