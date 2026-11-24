@@ -16,3 +16,6 @@ models/*.pt
 report.md
 startup.md
 .env
+
+# Walkthrough video (attached to a release) and its recording script
+video/
