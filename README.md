@@ -21,7 +21,7 @@ CPU is enough.
 | Evaluation with data leakage stated; error analysis | IMPLEMENTED (`eval/`) |
 | FastAPI service with upload validation, tests in CI, Docker | IMPLEMENTED |
 | Demo page and online static copy | IMPLEMENTED |
-| Walkthrough video on YouTube | DONE ([narrated walkthrough](https://youtu.be/nOzdFzO_gJ4); an earlier silent version is attached to the [v0.2.0 release](https://github.com/Hasta-8/glove-detection-yolov8/releases/tag/v0.2.0)) |
+| Walkthrough video on YouTube | DONE ([narrated walkthrough](https://youtu.be/nOzdFzO_gJ4)) |
 
 ## Results (measured)
 
